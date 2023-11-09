@@ -15,19 +15,30 @@ div.style.cssText = 'border-style: solid; border-color: black; background: pink;
 const hOne = document.createElement('h1');
 hOne.textContent = "I'm in a div";
 
-const btn = document.querySelector('#btn');
+const buttons = document.querySelectorAll('button');
 // btn.onclick = () => alert('Hello World');
-btn.addEventListener('click', () => {
-    alert('Hello World');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        alert(`You Clicked Button ${button.id}`);
+    });
 });
 
-function changeColor() {
-    (( btn.style.cssText == "background: red;")
-    ? (btn.style.cssText = "background: gray;") 
-    : (btn.style.cssText = "background: red;"));
-};
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        button.style.cssText == "background: red;"
+        ? (button.style.cssText = "background: gray;")
+        : (button.style.cssText = "background: red;");
+    });
+});
 
-btn.addEventListener('click', changeColor);
+// function changeColor() {
+//     (( btn.style.cssText == "background: red;")
+//     ? (btn.style.cssText = "background: gray;") 
+//     : (btn.style.cssText = "background: red;"));
+// };
+
+// btn.addEventListener('click', changeColor);
 // btn.addEventListener('click', () => {
 //     (( btn.style.cssText == "background: red;")
 //         ? (btn.style.cssText = "background: gray;") 
